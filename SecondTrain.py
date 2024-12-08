@@ -6,10 +6,10 @@ from sklearn.preprocessing import LabelEncoder
 
 # Carica il modello salvato
 model = TabNetClassifier()
-model.load_model("tabnet_model3.zip")
+model.load_model("tabnet_model8.zip")
 
 # Carica e prepara il nuovo dataset
-new_data = pd.read_csv("../Dataset1/Thursday-01-03-2018_TrafficForML_CICFlowMeter.csv", low_memory=False)
+new_data = pd.read_csv("../Dataset1/Wednesday-28-02-2018_TrafficForML_CICFlowMeter.csv", low_memory=False)
 new_data = new_data.replace([np.inf, -np.inf], np.nan)
 non_numeric_columns = new_data.select_dtypes(include=['object', 'category']).columns
 
@@ -59,4 +59,4 @@ model.fit(
 )
 
 # Salva il modello ri-addestrato
-model.save_model("tabnet_model4")
+model.save_model("tabnet_model9")
